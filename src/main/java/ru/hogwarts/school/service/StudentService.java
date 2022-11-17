@@ -76,4 +76,18 @@ public class StudentService {
     public FacultyRecord findFacultyByStudent(long id) {
         return read(id).getFaculty();
     }
+
+    public Integer getStudentCount() {
+        return studentRepository.getStudentsCount();
+    }
+
+    public Double getStudentsAverageAge() {
+        return studentRepository.getStudentsAverageAge();
+    }
+
+    public Collection<StudentRecord> getLastFiveStudents() {
+        return studentRepository.findLastFiveStudents().stream()
+                .map(recordMapper::toRecord)
+                .collect(Collectors.toList());
+    }
 }

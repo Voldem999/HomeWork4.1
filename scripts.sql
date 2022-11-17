@@ -21,3 +21,20 @@ select *
 from students
 order by age desc;
 
+select count(*)
+from students;
+
+select *
+from students
+order by id desc
+limit 5;
+
+select *
+from students
+order by id
+limit 5;
+
+select avg(age)
+from students;
+
+
